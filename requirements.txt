@@ -1,0 +1,8 @@
+torch==2.0.1
+transformers==4.23.1
+streamlit
+pandas==1.5.3
+fugashi==1.2.1
+ipadic==1.0.0
+requests==2.28.1
+torchmetrics==0.7.0
