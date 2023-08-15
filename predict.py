@@ -75,8 +75,11 @@ img = Image.open('logo.jpg')
 st.image(img, caption='', use_column_width=True)
 
 st.text('参考文献')
-st.text('著：鈴木 祐【ヒトが持つ8つの本能に刺さる進化論マーケティング】')
+st.text('著：鈴木 祐')
+link = '[<span class="hljs-string">【ヒトが持つ8つの本能に刺さる進化論マーケティング】</span>](<span class="https://amzn.to/3OC7Q0X</span>)'
 st.text('テキストによって何の本能が活性化されているのか調べることが出来ます')
+st.text('各本能については本を参考にしてください')
+st.text('※入力文字数は512token(単語)までです,エラーが出た場合は文字数を削ってください')
 
 text = st.text_area("テキストを入力してください:", value='', max_chars=None, key=None)
 
