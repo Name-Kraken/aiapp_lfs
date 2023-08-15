@@ -76,7 +76,9 @@ st.image(img, caption='', use_column_width=True)
 
 st.text('参考文献')
 st.text('著：鈴木 祐')
-link = '[<span class="hljs-string">【ヒトが持つ8つの本能に刺さる進化論マーケティング】</span>](<span class="https://amzn.to/3OC7Q0X</span>)'
+link = "https://amzn.to/3OC7Q0X"
+st.markdown(f"[ヒトが持つ8つの本能に刺さる 進化論マーケティング]({link})")
+
 st.text('テキストによって何の本能が活性化されているのか調べることが出来ます')
 st.text('各本能については本を参考にしてください')
 st.text('※入力文字数は512token(単語)までです,エラーが出た場合は文字数を削ってください')
