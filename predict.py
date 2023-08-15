@@ -69,7 +69,7 @@ st.title('どの本能活性化されている？')
 # ライブラリ追加
 from PIL import Image
 
-img = Image.open(r'C:\Users\royal\Desktop\プログラミング\AI_app\logo.jpg')
+img = Image.open('logo.jpg')
 
 # use_column_width 実際のレイアウトの横幅に合わせる
 st.image(img, caption='', use_column_width=True)
