@@ -102,3 +102,7 @@ if st.button('予測'):
 
     # 棒グラフで表示
     st.bar_chart(scores_df)
+
+# warning を防ぐコード
+import warnings
+warnings.filterwarnings('ignore')
