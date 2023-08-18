@@ -28,13 +28,18 @@ class BertClassifier(nn.Module):
         h = self.fc(h)
         return h, bert_out[2]
 
-# モデルのロード
-net = BertClassifier()
-net.load_state_dict(torch.load('model.pth'))
-
 def predict(text):
+    # モデルのロード
+    net = BertClassifier()
+    net.load_state_dict(torch.load('model.pth'))
+
     # テキストをトークン化
     input_ids = tokenizer.encode(text, return_tensors='pt')
+
+    # 512トークンに制限
+    if input_ids.size(1) > 512:
+        st.warning("入力テキストが512トークンを超えています。最初の512トークンだけが使用されます。")
+        input_ids = input_ids[:, :512]
 
     # GPUが利用可能ならGPUにデータを送る
     if torch.cuda.is_available():
