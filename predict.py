@@ -4,6 +4,10 @@ import torch.nn.functional as F
 import transformers
 from transformers import BertJapaneseTokenizer
 
+# warning を防ぐコード
+import warnings
+warnings.filterwarnings('ignore')
+
 # ラベルの名前のリストを定義します。
 label_names = ["安らぐ本能", "進める本能", "決する本能", "有する本能", "属する本能", "高める本能", "伝える本能", "物語る本能"]
 
