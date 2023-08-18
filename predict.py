@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # ラベルの名前のリストを定義します。
-label_names = ["安らぐ本能", "進める本能", "決する本能", "有する本能", "属する本能", "高める本能", "伝える本能", "物語る本能"]
+label_names = ["1.安らぐ本能", "2.進める本能", "3.決する本能", "4.有する本能", "5.属する本能", "6.高める本能", "7.伝える本能", "8.物語る本能"]
 
 # 分かち書き用の tokenizer
 tokenizer = BertJapaneseTokenizer.from_pretrained('cl-tohoku/bert-base-japanese-whole-word-masking')
@@ -103,8 +103,10 @@ if st.button('予測'):
 
     # ラベルのスコアをPandas DataFrameに変換
     scores_df = pd.DataFrame(list(label_scores.items()), columns=['Label', 'Score'])
+    # ラベルの名前でソート（昇順）
+    scores_df = scores_df.sort_values(by='Label')
+    # インデックスをラベル名に設定
     scores_df = scores_df.set_index('Label')
-
     # 棒グラフで表示
     st.bar_chart(scores_df)
 
